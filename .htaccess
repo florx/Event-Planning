@@ -1,0 +1,17 @@
+Options +FollowSymlinks
+RewriteEngine on 
+
+
+RewriteRule ^login/?$ /login.php
+RewriteRule ^create/?$ /create.php
+
+RewriteRule ^view/([0-9]+)/?$ /viewEvent.php?eventID=$1
+RewriteRule ^view/([0-9]+)/asowner/?$ /viewEventAsOwner.php?eventID=$1
+
+RewriteRule ^edit/([0-9]+)/?$ /editEvent.php?eventID=$1
+
+RewriteRule ^edit/([0-9]+)/date/new/?$ /addDate.php?eventID=$1
+RewriteRule ^edit/([0-9]+)/date/([0-9]+)/?$ /editDate.php?eventID=$1&timeID=$2
+RewriteRule ^edit/([0-9]+)/date/([0-9]+)/response/([YN])/?$ /setResponse.php?eventID=$1&timeID=$2&response=$3
+
+RewriteRule ^edit/([0-9]+)/invite/?$ /invite.php?eventID=$1
